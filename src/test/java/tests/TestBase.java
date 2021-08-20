@@ -38,7 +38,7 @@ public class TestBase {
         // Attach.browserConsoleLogs();
         closeWebDriver();
 
-        Attach.addVideo(sessionId);
+//        Attach.addVideo(sessionId);
     }
 
     public static String getSessionId(){
