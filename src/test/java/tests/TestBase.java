@@ -25,7 +25,6 @@ public class TestBase {
 //        capabilities.setCapability("enableVideo", true);
 
         Configuration.browserCapabilities = capabilities;
-//        Configuration.remote = "http://139.59.215.23:4444/wd/hub/";
         Configuration.remote = System.getProperty("remote_driver_url", "");
     }
 
