@@ -18,11 +18,12 @@ public class TestBase {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
         Configuration.startMaximized = true;
+        Configuration.timeout = 10000;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
         capabilities.setCapability("enableVNC", true);
-//        capabilities.setCapability("enableVideo", true);
+        capabilities.setCapability("enableVideo", false);
 
         Configuration.browserCapabilities = capabilities;
         Configuration.remote = System.getProperty("remote_driver_url", "https://user1:1234@selenoid.autotests.cloud/wd/hub/");
