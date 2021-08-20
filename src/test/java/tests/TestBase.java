@@ -25,7 +25,7 @@ public class TestBase {
 //        capabilities.setCapability("enableVideo", true);
 
         Configuration.browserCapabilities = capabilities;
-        Configuration.remote = System.getProperty("remote_driver_url", "");
+        Configuration.remote = System.getProperty("remote_driver_url", "https://user1:1234@selenoid.autotests.cloud/wd/hub/");
     }
 
     @AfterEach
@@ -33,8 +33,8 @@ public class TestBase {
         String sessionId = getSessionId();
 
         Attach.screenshotAs("Last screenshot");
-        Attach.pageSource();
-        Attach.browserConsoleLogs();
+        // Attach.pageSource();
+        // Attach.browserConsoleLogs();
         closeWebDriver();
 
         Attach.addVideo(sessionId);
