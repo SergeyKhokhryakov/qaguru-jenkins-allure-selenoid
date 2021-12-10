@@ -25,19 +25,19 @@ public class TestBase {
 
         Configuration.browserCapabilities = capabilities;
 //        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
-        Configuration.remote = System.getProperty("remote_driver_url", "");
+        Configuration.remote = System.getProperty("remote_driver_url", "http://46.101.129.119:4444/wd/hub/");
     }
 
     @AfterEach
     public void tearDown() {
-        String sessionId = getSessionId();
+//        String sessionId = getSessionId();
 
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
         Attach.browserConsoleLogs();
         closeWebDriver();
 
-        Attach.addVideo(sessionId);
+//        Attach.addVideo(sessionId);
     }
 
     public static String getSessionId(){

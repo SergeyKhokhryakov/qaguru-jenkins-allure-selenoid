@@ -34,7 +34,7 @@ public class StudentRegistrationFormTests extends TestBase {
     void successfulFillFormTest() {
         step("Open students registration form", () -> {
             open("https://demoqa.com/automation-practice-form");
-            sleep(20000);
+            sleep(10000);
             $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
         });
 
