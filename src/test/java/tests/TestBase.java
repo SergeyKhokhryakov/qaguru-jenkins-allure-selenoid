@@ -25,7 +25,7 @@ public class TestBase {
 
         Configuration.browserCapabilities = capabilities;
 //        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
-        Configuration.remote = System.getProperty("remote_driver_url", "http://46.101.129.119:4444/wd/hub/");
+        Configuration.remote = System.getProperty("remote_driver_url", "http://46.101.108.21:4444/wd/hub/");
     }
 
     @AfterEach
