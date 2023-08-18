@@ -6,6 +6,7 @@ import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -24,8 +25,13 @@ public class TestBase {
         capabilities.setCapability("enableVNC", true);
 
         Configuration.browserCapabilities = capabilities;
-//        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
-        Configuration.remote = System.getProperty("remote_driver_url", "http://46.101.108.21:4444/wd/hub/");
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
+//        Configuration.remote = System.getProperty("remote_driver_url", "http://46.101.108.21:4444/wd/hub/");
+    }
+
+    @BeforeEach
+    static void setupEach(){
+        open("https://trr-chacha");
     }
 
     @AfterEach
