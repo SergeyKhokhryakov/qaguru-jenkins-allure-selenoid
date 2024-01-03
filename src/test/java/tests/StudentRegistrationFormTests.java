@@ -33,8 +33,11 @@ public class StudentRegistrationFormTests extends TestBase {
     @Test
     void successfulFillFormTest() {
         step("Open students registration form", () -> {
-            open("https://demoqa.com/automation-practice-form");
-            sleep(10000);
+            open("/automation-practice-form");
+//            sleep(10000);
+            //hide overlay banners
+            executeJavaScript("$('footer').remove()");
+            executeJavaScript("$('#fixedban').remove()");
             $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
         });
 
