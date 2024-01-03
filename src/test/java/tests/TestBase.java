@@ -30,7 +30,7 @@ public class TestBase {
         Configuration.browserCapabilities = capabilities;
         String s = "s",
                 password = System.getProperty("psw");
-        if (password == null) {
+        if (password == null || password.equals("")) {
             password = "";
             s = "";
         }
